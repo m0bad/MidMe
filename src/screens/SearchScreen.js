@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
+  // Text,
   Button
 } from 'react-native';
 
@@ -18,4 +18,4 @@ class SearchScreen extends Component {
   }
 }
 
-export default SearchScreen;
+export { SearchScreen };
