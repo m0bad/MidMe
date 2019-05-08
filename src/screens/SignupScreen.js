@@ -14,4 +14,4 @@ class SignupScreen extends Component {
   }
 }
 
-export default SignupScreen;
+export { SignupScreen };
