@@ -15,4 +15,4 @@ class ResultSearchScreen extends Component {
   }
 }
 
-export default ResultSearchScreen;
+export { ResultSearchScreen };
