@@ -15,4 +15,4 @@ class CartScreen extends Component {
   }
 }
 
-export default CartScreen;
+export { CartScreen };

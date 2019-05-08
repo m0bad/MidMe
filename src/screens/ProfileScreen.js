@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
+  // Text,
   Button
 } from 'react-native';
 
@@ -17,4 +17,4 @@ class ProfileScreen extends Component {
   }
 }
 
-export default ProfileScreen;
+export { ProfileScreen };

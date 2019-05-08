@@ -14,4 +14,4 @@ class OrdersScreen extends Component {
   }
 }
 
-export default OrdersScreen;
+export { OrdersScreen };
