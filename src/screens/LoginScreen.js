@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import LoginForm from '../components/LoginForm';
+import reducers from '../reducers';
+
 
 class LoginScreen extends Component {
   render() {
-    return (
-      <View>
-        <Text>I'm the Login component</Text>
-      </View>
-    );
-  }
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+   
+       return (
+         <Provider store={store}>
+         <LoginForm />
+         </Provider>
+       );
+     }
 }
 
 export { LoginScreen };
