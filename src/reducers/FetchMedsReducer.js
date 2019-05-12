@@ -6,7 +6,7 @@ import { fetchMedicines } from '../actions/fetchDataActions';
 
 const INITIAL_STATE = {
     medicines: [],
-    loading: 'false',
+    // loading: 'false',
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -14,7 +14,7 @@ export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case FETCH_MEDS_FROM_DB:
             // console.log('THE ACTION: '+action.payload);
-            return { ...state, medicines: action.payload, loading: 'true' };
+            return { ...state, medicines: action.payload };
         default:
             return state;
     }

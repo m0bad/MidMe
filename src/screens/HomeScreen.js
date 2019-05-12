@@ -7,26 +7,30 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchMedsData } from '../reducers/FetchMedsReducer';
+import { fetchPharsData } from '../reducers/FetchPharsReducer';
 
 const mapStateToProps = (state) => {
     return {
         medicines: state.fetchMeds.medicines,
-        loading: state.fetchMeds.loading
+        pharmacies: state.fetchPhars.pharmacies
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchMedsData: () => dispatch(fetchMedsData())
+        fetchMedsData: () => dispatch(fetchMedsData()),
+        fetchPharsData: () => dispatch(fetchPharsData())
+
     };
 };
 
 class HomeScreen extends Component {
      componentWillMount() {
         this.props.fetchMedsData();
+        this.props.fetchPharsData();
     }
 
-     lapsList() {
+     renderMeds() {
          // console.log('NOW: '+this.props.medicines.price);
     if (this.props.medicines) { //if no show a spinner or something
     return this.props.medicines.map((med, index) => {
@@ -44,17 +48,31 @@ class HomeScreen extends Component {
     );
 }
 
+    renderPhars() {
+        // console.log('NOW: '+this.props.medicines.price);
+    if (this.props.pharmacies) { //if no show a spinner or something
+    return this.props.pharmacies.map((phar, index) => {
+       // console.log(index + ': ' + med.name);
+     return (
+       <View key={index}>
+           <Text>{phar.name}</Text>
+           <Text>{phar.canDeliver}</Text>
+       </View>
+     );
+    });
+    }
+return (
+   <Text>Hello THERE</Text>
+);
+}
+
   render() {
-      console.log(Array.isArray(this.props.medicines));
-      // console.log(this.props.medicines);
     return (
       <View>
-
-          {this.lapsList()}
+            <Text>IT WORKS</Text>
       </View>
     );
   }
 }
 
-// export default connect(mapStateToProps)(HomeScreen);
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
