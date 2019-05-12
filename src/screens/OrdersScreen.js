@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import {
   View,
-  Text,
+  Button,
 } from 'react-native';
 
 class OrdersScreen extends Component {
-  render() {
+ render() {
     return (
-      <View>
-        <Text>I'm the OrdersScreen component</Text>
-      </View>
-    );
+     <View>
+      <Button
+          title='OrdersScreen'
+          onPress={() => this.props.navigation.navigate('Result')}
+      />
+    </View>
+      );
   }
 }
+
 
 export { OrdersScreen };

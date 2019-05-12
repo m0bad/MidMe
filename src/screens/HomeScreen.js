@@ -2,22 +2,24 @@
 import React, { Component } from 'react';
 import {
   View,
-  // Text,
+  ScrollView,
+  Text,
   Button,
 } from 'react-native';
+import { SearchForm } from '../components/SearchForm';
+
 // import DrawerNavigator from '../Routers/DrawerNavigator';
 // import { StackNavigator, DrawerNavigator, TabsNavigator } from '../Routers';
 
 export default class HomeScreen extends Component {
+  static navigationOptions = {
+  header: null
+  };
   render() {
     return (
-      <View>
-        <Button
-            title='Search'
-            onPress={() => this.props.navigation.navigate('Search')}
-        />
-
-      </View>
+    <ScrollView>
+        <SearchForm />
+       </ScrollView>
     );
   }
 }
