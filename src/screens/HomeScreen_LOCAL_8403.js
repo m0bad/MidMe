@@ -17,7 +17,6 @@ export default class HomeScreen extends Component {
   };
   render() {
     return (
-           <Text>{phar.name}</Text>
     <ScrollView>
         <SearchForm />
        </ScrollView>
