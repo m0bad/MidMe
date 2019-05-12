@@ -6,7 +6,7 @@ import { fetchPharmacies } from '../actions/fetchDataActions';
 const INITIAL_STATE = {
     pharmacies: [],
 };
-export default (state=INITIAL_STATE, action) => {
+export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case FETCH_PHARMACIES_FROM_DB:
             return { ...state, pharmacies: action.payload };
