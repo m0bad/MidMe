@@ -34,11 +34,11 @@ export const fetchMedsData = () => {
                    const price = med.child('price').val();
 
                    medsArray.push({
-                       name: name,
-                       description: description,
-                       imgUrl: imgUrl,
-                       pharmacy_id: pharmacy_id,
-                       price: price
+                       name,
+                       description,
+                       imgUrl,
+                       pharmacy_id,
+                       price
 
                    });
                });

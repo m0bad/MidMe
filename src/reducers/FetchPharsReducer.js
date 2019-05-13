@@ -27,11 +27,11 @@ export const fetchPharsData = () => {
                 const meds = phar.child('meds').val();
 
                 pharsArray.push({
-                    name: name,
-                    canDeliver: canDeliver,
-                    lang: lang,
-                    lat: lat,
-                    meds: meds
+                    name,
+                    canDeliver,
+                    lang,
+                    lat,
+                    meds
                 });
             });
         }).then(() => {
